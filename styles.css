@@ -33,6 +33,7 @@ nav {
 .logo:hover,
 .logo:focus {
     color: red;
+    text-shadow: 1px 1px 5px red;
     font-size: 20px;
     cursor: pointer;
     /* text-decoration: underline; */
@@ -95,6 +96,7 @@ nav {
 
 .web-dev-red {
     color: red;
+    text-shadow: 1px 1px 5px red;
 }
 
 
@@ -104,13 +106,46 @@ a {
 }
 
 
-.email-modale {
-    /* display: none; */
-    border: 3px solid #a17917;
 
+
+
+.fa-envelope {
+    position: fixed;
+    bottom: 45px;
+    right: 45px;
+    color: #a17917;
+    font-size: 52px;
+    transition: opacity 2.5s ease-in; 
+    opacity: 0.5;
+    
 }
 
 
+.fa-envelope:hover,
+.fa-envelope:focus  {
+    opacity: 1;
+    color: red;
+    font-size: 60px;
+    cursor: pointer;
+    text-shadow: 1px 1px 5px red;
+    /* text-decoration: underline; */
+}
+
+
+.email-modale {
+    /* display: none; */
+    position: fixed;
+    background: #080808;
+    opacity: 0.80;
+    border: 3px solid #a17917;
+    width: 0px;
+    height: 0px;
+    /* width: 350px;
+    height: 350px; */
+    bottom: 47px;
+    right: 40px;
+
+}
 
 .hidden {
     opacity: 0;
@@ -120,3 +155,17 @@ a {
     transition: opacity 2.5s ease-in; 
     opacity: 1;
 }
+
+.hidden-email-icon {
+    display: none;
+}
+
+.hidden-email-modale {
+    display: none;
+}
+
+.visible-email-modale {
+    display: inline-block;
+}
+
+

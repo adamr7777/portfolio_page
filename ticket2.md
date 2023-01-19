@@ -5,5 +5,5 @@
 
 to do list: 
 done @ make that web dev logo reveale welcome section and right sidebar????
-@ make that email icon appears on the bottom right corner outside of document
-@ make text shadows on web dev logo when flickers
+done@ make that email icon appears on the bottom right corner outside of document
+done@ make text shadows on web dev logo when flickers
