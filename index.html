@@ -16,23 +16,25 @@
     <body>
         <header>
             <nav>
-                <div class='logo'>
-                    <h2>Web Dev</h2>
-                    <i class="fa-solid fa-umbrella"></i>
-                </div>
-                <div class='nav-options'>
+                <a href='index.html'>               <!--make sure the address is correct when deploying-->
+                    <div class='logo'>
+                        <h2 id='web-dev-h2'>Web Dev</h2>
+                        <i class="fa-solid fa-umbrella"></i>
+                    </div>
+                </a>
+                <div class='nav-options hidden' id='nav-options'>
                     <p>works</p>
                     <p>about me</p>
-                    <i class="fa-brands fa-linkedin"></i>
-                    <i class="fa-brands fa-github"></i>
-                    <i class="fa-solid fa-envelope"></i>
+                    <a target='_blank' href='https://about.linkedin.com/'><i class="fa-brands fa-linkedin"></i></a>
+                    <a target='_blank' href='https://github.com/adomasr'><i class="fa-brands fa-github"></i></a>
+                    <div id='email-modale' id='email-modale'><i class="fa-solid fa-envelope"></i></div>
                 </div>
             </nav>
         </header>
         <main>
             <section>
                 <div class='main-container'>
-                    <div class='introduction'>
+                    <div class='introduction hidden' id='introduction'>
                         <h1 class='welcome'>Welcome</h1>
                         <article>
                             <div>
