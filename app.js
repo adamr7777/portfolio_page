@@ -1,3 +1,4 @@
+//variables 
 
 const emailIcon = document.getElementById('email-icon');
 
@@ -39,6 +40,16 @@ function renderEmailDiv() {
     // emailModale.style.height = '350px';
     // emailModale.style.width = '350px';
     animateGrowth(emailModale);
+    //render content
+    const content = document.getElementsByClassName('email-modal-content');
+    const delayedContent = setTimeout(()=> {
+        for (let element of content) {
+            element.classList.remove('hidden');
+            element.classList.add('visible');
+        }
+    }, 650)
+    
+    
 }
 
 function animateGrowth(emailModale) {
@@ -53,12 +64,26 @@ function animateGrowth(emailModale) {
     }, 100)
 }
 
-//event listener
+
+//event listeners
 
 
 document.addEventListener('click', (event)=> {
     if (event.target.id === 'email-icon') {
         renderEmailDiv() 
+    }
+
+    if (event.target.id === 'info-p') {
+        const emailH4 = document.getElementById('email-h4');
+        const infoP = document.getElementById('info-p');
+        navigator.clipboard.writeText(emailH4.textContent)
+            .then(()=> {
+                infoP.textContent = 'Copied!'
+                //add styling
+            })
+            .catch(err=> {
+                alert(`Failed to copy the text: ${err} Please try again`)
+            })
     }
 })
 
