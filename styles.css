@@ -161,6 +161,7 @@ a {
 
 .hidden {
     opacity: 0;
+    transition: opacity 0.5s ease-in; 
 }
 
 .visible {
@@ -179,5 +180,28 @@ a {
 .visible-email-modale {
     display: flex;
 }
+
+
+.info-p:hover,
+.info-p:focus,
+.close-btn:hover, 
+.close-btn:focus {
+    color: red;
+    cursor: pointer;
+    text-shadow: 1px 1px 5px red;
+}
+
+
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 6px;
+    border: none;
+    background: none;
+    color: inherit;
+
+}
+
 
 

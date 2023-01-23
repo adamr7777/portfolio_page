@@ -34,12 +34,13 @@ function revealContent() {
 }
     
 function renderEmailDiv() {
+    const isReverse = false;
     const emailModale = document.getElementById('email-modale');
     emailIcon.classList.add('hidden-email-icon');
     emailModale.classList.add('visible-email-modale');
     // emailModale.style.height = '350px';
     // emailModale.style.width = '350px';
-    animateGrowth(emailModale);
+    animateGrowth(emailModale, isReverse);
     //render content
     const content = document.getElementsByClassName('email-modal-content');
     const delayedContent = setTimeout(()=> {
@@ -48,20 +49,67 @@ function renderEmailDiv() {
             element.classList.add('visible');
         }
     }, 650)
+}
     
     
+
+
+function animateGrowth(emailModale, isReverse) {
+    if (isReverse === false) {
+        let size = 10;
+        const theInterval = setInterval(()=> {
+            emailModale.style.height = size + 'px';
+            emailModale.style.width = size + 'px';
+            size += 50;
+            if (size >= 350) {
+                clearInterval(theInterval);
+            }
+        }, 100)
+    }
+    else if (isReverse === true) {
+        let size = 310;
+        const theInterval = setInterval(()=> {
+            emailModale.style.height = size + 'px';
+            emailModale.style.width = size + 'px';
+            size -= 50;
+            if (size <= 0) {
+                clearInterval(theInterval);
+            }
+        }, 100)
+    }
 }
 
-function animateGrowth(emailModale) {
-    let size = 10;
-    const theInterval = setInterval(()=> {
-        emailModale.style.height = size + 'px';
-        emailModale.style.width = size + 'px';
-        size += 50;
-        if (size >= 350) {
-            clearInterval(theInterval);
-        }
-    }, 100)
+
+function copyToClipboard() {
+    const emailH4 = document.getElementById('email-h4');
+        const infoP = document.getElementById('info-p');
+        navigator.clipboard.writeText(emailH4.textContent)
+            .then(()=> {
+                infoP.textContent = 'Copied!'           //add async 
+                infoP.style.color = '#a17917';
+                infoP.classList.remove('info-p');
+            })
+            .catch(err=> {
+                alert(`Failed to copy the text: ${err} Please try again`)
+            })
+}
+
+
+function unrenderEmailDiv() {
+    const isReverse = true;
+    const emailModale = document.getElementById('email-modale');
+    const content = document.getElementsByClassName('email-modal-content');
+    const delayedContent = setTimeout(()=> {
+        animateGrowth(emailModale, true);
+    }, 500)
+    for (let element of content) {
+        element.classList.remove('visible');
+        element.classList.add('hidden');
+    }
+    const displayEmailIcon = setTimeout (()=> {
+        emailIcon.classList.remove('hidden-email-icon'); 
+        emailModale.classList.remove('visible-email-modale'); 
+    }, 1230)
 }
 
 
@@ -74,16 +122,11 @@ document.addEventListener('click', (event)=> {
     }
 
     if (event.target.id === 'info-p') {
-        const emailH4 = document.getElementById('email-h4');
-        const infoP = document.getElementById('info-p');
-        navigator.clipboard.writeText(emailH4.textContent)
-            .then(()=> {
-                infoP.textContent = 'Copied!'
-                //add styling
-            })
-            .catch(err=> {
-                alert(`Failed to copy the text: ${err} Please try again`)
-            })
+        copyToClipboard();
+    }
+
+    if (event.target.id === 'close-btn') {
+        unrenderEmailDiv();
     }
 })
 
