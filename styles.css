@@ -7,6 +7,7 @@ body {
 }
 
 nav {
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -16,8 +17,7 @@ nav {
 
 
 .nav-options {
-    display: flex;                      /*work with*/
-    flex-direction: row;
+    display: flex;                     
     align-items: center;
     justify-content: space-between;
     /* border: 3px dotted white; */
@@ -63,7 +63,7 @@ nav {
     background: #080808; 
 }
 
-.introduction {                                 /*work with*/
+.introduction {                                
     border-left: 3px solid #a17917;
     border-bottom: 3px solid #a17917;
     margin-right: 400px;
@@ -203,5 +203,46 @@ a {
 
 }
 
+/* .about-me-section {
+    display: none;
+}  */
 
 
+.first-item-aboutme {
+    margin-top: 100px;
+}
+
+/* 
+.about-me-content {
+    margin-bottom:
+} */
+
+.about-me-stack li {
+    margin-top: 50px;       /*this is where to work with stack li*/
+    list-style: none;
+}
+
+.about-me-stack li::before {
+    content: '\2022';  
+    color: red; 
+    text-shadow: 1px 1px 5px red;
+    font-weight: bold; 
+    display: inline-block; 
+    width: 1em; 
+    margin-left: -1em; 
+  }
+
+  .works-div {
+              
+    
+  }
+
+  .works-clicked {          /*add this class to works-div when clicked*/
+    position: absolute;
+    /* border: 3px dotted red; */
+    top: 8px;
+    left: 600px;            /*this is where to change position according to the number of works*/
+    height: 50px;
+    width: 300px;           /*this is where to change size according to the number of works*/
+  }
+  

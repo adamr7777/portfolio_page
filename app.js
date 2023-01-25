@@ -3,6 +3,7 @@
 const emailIcon = document.getElementById('email-icon');
 
 
+
 //functions
 
 function getFlicker() {
@@ -127,6 +128,38 @@ document.addEventListener('click', (event)=> {
 
     if (event.target.id === 'close-btn') {
         unrenderEmailDiv();
+    }
+
+    if (event.target.id === 'about-me-btn') {
+       const introContent =  document.getElementsByClassName('intro-cont');
+   
+       const aboutMeHtml = ` 
+                                <h3 class='first-item-aboutme'>I am a web developer that specialises in frontend.</h3> 
+                                <h3 class='second-item-aboutme'>My current stack:</h3>
+                                <ul class='about-me-stack'>
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>Vanilla Java Script</li>
+                                    <li>Git Version Control</li>
+                                </ul>
+                            `;
+  
+       const introDiv = document.getElementById('introduction');
+       for (let element of introContent) {
+        element.classList.add('hidden');
+       }
+       const displayCont = setTimeout(()=> {
+            introDiv.innerHTML = aboutMeHtml;
+       }, 700)
+       
+   
+     
+     
+
+       
+       
+    // console.log(aboutMeSection);
+    
     }
 })
 
