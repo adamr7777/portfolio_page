@@ -264,6 +264,7 @@ a {
   }
 
   .works-clicked {  
+    position: relative;
     display: flex;
     position: absolute;
     border-top: 3px solid #a17917;
@@ -321,3 +322,17 @@ a {
     color: red; 
     text-shadow: 1px 1px 5px red;
   }
+
+  .close-btn-works {
+    position: absolute;
+    top: 4px;
+    right: 0px;
+    border: none;
+    background: none;
+    color: silver;
+
+}
+
+.hidden-x {
+    display: none;
+}

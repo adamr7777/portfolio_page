@@ -1,7 +1,7 @@
 //variables 
 
 const emailIcon = document.getElementById('email-icon');
-let clickedOnce = false;
+let worksBtnClickedOnce = false;
 
 
 
@@ -151,7 +151,7 @@ function renderWorks() {
     const worksDiv = document.getElementById('works-div');
     const aboutmeBtn = document.getElementById('about-me-btn');
     const worksBtn = document.getElementById('works-btn');
-    worksBtn
+    // worksBtn
     worksBtn.textContent += ':';
     worksBtn.classList.remove('nav-item');
     // worksBtn.classList.add('works-btn-alt');
@@ -160,19 +160,46 @@ function renderWorks() {
     // document.getElementById('span').style.color = 'red';
     worksDiv.classList.add('works-clicked');
     aboutmeBtn.classList.add('about-me-btn-changed');
-    worksDiv.innerHTML += `<p class='projects hidden' id='password-g'>Password generator</p><p class='projects hidden' id='word-w'>Word writer</p`
-    const passwordG = document.getElementById('password-g')
-    const wordW = document.getElementById('word-w')
+    worksDiv.innerHTML += `<button id='close-btn-works' class='close-btn-works projects'>X</button><p class='projects hidden' id='password-g'>Password generator</p><p class='projects hidden' id='word-w'>Word writer</p`
+    const passwordG = document.getElementById('password-g');
+    const wordW = document.getElementById('word-w');
+    // const closeBtnWorks = document.getElementById('close-btn-works');
     const appearingPassword = setTimeout(()=> {
         passwordG.classList.remove('hidden');
         passwordG.classList.add('visible');
     }, 250)
-    const appearingWord= setTimeout(()=> {
+    const appearingWord = setTimeout(()=> {
         wordW.classList.remove('hidden');
         wordW.classList.add('visible');
     }, 250)
+    // const appearingCloseBtn = setTimeout(()=> {
+    //     closeBtnWorks.classList.remove('hidden');
+    //     closeBtnWorks.classList.add('visible');
+    // }, 250)
 }
 
+
+function unrenderWorks() {
+    const worksDiv = document.getElementById('works-div');
+    const aboutmeBtn = document.getElementById('about-me-btn');
+    const worksBtn = document.getElementById('works-btn');
+    const passwordG = document.getElementById('password-g');
+    const wordW = document.getElementById('word-w');
+    const closeBtnWorks = document.getElementById('close-btn-works');
+    passwordG.classList.remove('visible');
+    passwordG.classList.add('hidden');
+    wordW.classList.remove('visible');
+    wordW.classList.add('hidden');
+    const dissapearingWorksMenu = setTimeout(()=> {
+        worksBtn.textContent = 'works';
+        aboutmeBtn.classList.remove('about-me-btn-changed');
+        worksDiv.classList.remove('works-clicked');
+        worksBtn.classList.add('nav-item');
+        closeBtnWorks.classList.add('hidden');
+        worksDiv.innerHTML = `<p id='works-btn' class='works-btn nav-item'>works</p>`;
+    }, 750)
+    worksBtnClickedOnce = !worksBtnClickedOnce;
+}
 
 function render1work() {
     
@@ -225,10 +252,15 @@ document.addEventListener('click', (event)=> {
     }
 
     if (event.target.id === 'works-btn') {
-        if (!clickedOnce) {
+        if (!worksBtnClickedOnce) {
             renderWorks();
-            clickedOnce = !clickedOnce;
+            worksBtnClickedOnce = !worksBtnClickedOnce;
         }
+
+    }
+
+    if (event.target.id === 'close-btn-works') {
+        unrenderWorks();
     }
 
     if (event.target.id === 'password-g') {
