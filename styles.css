@@ -259,12 +259,12 @@ a {
     margin-left: -1em; 
   }
 
-  .works-div {
+/* .works-div {
     background: #080808;
     opacity: 0.80;
-  }
+  } */
 
-  .works-clicked {  
+.works-clicked {  
     position: relative;
     display: flex;
     position: absolute;
@@ -277,10 +277,15 @@ a {
   }
   
 
-  .projects {
+.projects {
     margin-left: 50px;
     color: silver;
   }
+
+
+/* .works-btn {
+    opacity: 1;
+} */
 
  /* .works-btn-alt:hover {
     font-size: 16px;
