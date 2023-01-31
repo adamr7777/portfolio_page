@@ -1,6 +1,7 @@
 //variables 
 
 const emailIcon = document.getElementById('email-icon');
+let clickedOnce = false;
 
 
 
@@ -41,7 +42,7 @@ function renderEmailDiv() {
     emailModale.classList.add('visible-email-modale');
     // emailModale.style.height = '350px';
     // emailModale.style.width = '350px';
-    animateGrowth(emailModale, isReverse);
+    animateGrowthEmail(emailModale, isReverse);
     //render content
     const content = document.getElementsByClassName('email-modal-content');
     const delayedContent = setTimeout(()=> {
@@ -51,11 +52,9 @@ function renderEmailDiv() {
         }
     }, 650)
 }
-    
-    
 
 
-function animateGrowth(emailModale, isReverse) {
+function animateGrowthEmail(emailModale, isReverse) {
     if (isReverse === false) {
         let size = 10;
         const theInterval = setInterval(()=> {
@@ -101,7 +100,7 @@ function unrenderEmailDiv() {
     const emailModale = document.getElementById('email-modale');
     const content = document.getElementsByClassName('email-modal-content');
     const delayedContent = setTimeout(()=> {
-        animateGrowth(emailModale, true);
+        animateGrowthEmail(emailModale, true);
     }, 500)
     for (let element of content) {
         element.classList.remove('visible');
@@ -111,6 +110,97 @@ function unrenderEmailDiv() {
         emailIcon.classList.remove('hidden-email-icon'); 
         emailModale.classList.remove('visible-email-modale'); 
     }, 1230)
+}
+
+
+function renderContent(htmlString) {
+    const introContent =  document.getElementsByClassName('intro-cont');
+    const introDiv = document.getElementById('introduction');
+    for (let element of introContent) {
+    element.classList.add('hidden');
+    }
+    const displayCont = setTimeout(()=> {
+        introDiv.innerHTML = htmlString;
+    }, 700)
+}
+
+
+function renderAboutMe() {
+    const htmlString = ` 
+                            <h3 class='first-item-aboutme intro-cont'>I am a web developer that specialises in frontend.</h3> 
+                            <h3 class='second-item-aboutme intro-cont'>My current stack:</h3>
+                            <ul class='about-me-stack intro-cont'>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>Vanilla Java Script</li>
+                                <li>Git Version Control</li>
+                            </ul>
+                        `;
+    renderContent(htmlString);
+  
+    
+}
+
+
+function renderWorks() {
+    // let isReverse = false;
+    // if (isReverse === false) {
+
+    //     isReverse = !isReverse;
+    // } 
+    const worksDiv = document.getElementById('works-div');
+    const aboutmeBtn = document.getElementById('about-me-btn');
+    const worksBtn = document.getElementById('works-btn');
+    worksBtn
+    worksBtn.textContent += ':';
+    worksBtn.classList.remove('nav-item');
+    // worksBtn.classList.add('works-btn-alt');
+    // console.log(worksBtn.classList);
+    // worksBtn.innerHTML += '<span id="span">:</span>';
+    // document.getElementById('span').style.color = 'red';
+    worksDiv.classList.add('works-clicked');
+    aboutmeBtn.classList.add('about-me-btn-changed');
+    worksDiv.innerHTML += `<p class='projects hidden' id='password-g'>Password generator</p><p class='projects hidden' id='word-w'>Word writer</p`
+    const passwordG = document.getElementById('password-g')
+    const wordW = document.getElementById('word-w')
+    const appearingPassword = setTimeout(()=> {
+        passwordG.classList.remove('hidden');
+        passwordG.classList.add('visible');
+    }, 250)
+    const appearingWord= setTimeout(()=> {
+        wordW.classList.remove('hidden');
+        wordW.classList.add('visible');
+    }, 250)
+}
+
+
+function render1work() {
+    
+    const htmlString = ` 
+                            <h3 class='works-text works-text-upper intro-cont'>Introducing my secure password generator app! 
+                            Say goodbye to weak and easily hacked passwords. With just a click, generate strong and unique passwords 
+                            for all of your online accounts.</h3>
+                            <h3 class='works-text intro-cont'>Experience the ease and peace of mind that comes with a secure password. 
+                            Try it out today!</h3>
+                            <a href='https://adomasr.github.io/password_app/' target='_blank'><h5 class='password-link intro-cont'><span class='link-span'><</span> Link <span class='link-span'>></span></h5></a> 
+                        `;
+    renderContent(htmlString);
+}
+
+
+function render2work() {
+
+    const htmlString = ` 
+                            
+                            <h3 class='works-text works-text-upper intro-cont'>
+                            Discover my online writing app, designed to help you write more efficiently. 
+                            No more cluttered notes, just a clean and organized workspace. 
+                            Write and save with ease, wherever you are.</h3>
+                            <h3 class='works-text intro-cont'>Take your writing to the next level with a simple and user-friendly platform. 
+                            Get started today!</h3>
+                            <a href='https://adomasr.github.io/Project/' target='_blank'><h5 class='password-link intro-cont'><span class='link-span'><</span> Link <span class='link-span'>></span></h5></a> 
+                        `;
+    renderContent(htmlString);
 }
 
 
@@ -131,35 +221,22 @@ document.addEventListener('click', (event)=> {
     }
 
     if (event.target.id === 'about-me-btn') {
-       const introContent =  document.getElementsByClassName('intro-cont');
-   
-       const aboutMeHtml = ` 
-                                <h3 class='first-item-aboutme'>I am a web developer that specialises in frontend.</h3> 
-                                <h3 class='second-item-aboutme'>My current stack:</h3>
-                                <ul class='about-me-stack'>
-                                    <li>HTML</li>
-                                    <li>CSS</li>
-                                    <li>Vanilla Java Script</li>
-                                    <li>Git Version Control</li>
-                                </ul>
-                            `;
-  
-       const introDiv = document.getElementById('introduction');
-       for (let element of introContent) {
-        element.classList.add('hidden');
-       }
-       const displayCont = setTimeout(()=> {
-            introDiv.innerHTML = aboutMeHtml;
-       }, 700)
-       
-   
-     
-     
+       renderAboutMe();
+    }
 
-       
-       
-    // console.log(aboutMeSection);
-    
+    if (event.target.id === 'works-btn') {
+        if (!clickedOnce) {
+            renderWorks();
+            clickedOnce = !clickedOnce;
+        }
+    }
+
+    if (event.target.id === 'password-g') {
+        render1work();
+    }
+
+    if (event.target.id === 'word-w') {
+        render2work();
     }
 })
 
