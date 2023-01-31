@@ -260,7 +260,8 @@ a {
   }
 
   .works-div {
-   
+    background: #080808;
+    opacity: 0.80;
   }
 
   .works-clicked {  
