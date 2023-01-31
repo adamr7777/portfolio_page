@@ -160,6 +160,8 @@ function renderWorks() {
     // document.getElementById('span').style.color = 'red';
     worksDiv.classList.add('works-clicked');
     aboutmeBtn.classList.add('about-me-btn-changed');
+    worksDiv.style.background = '#080808';
+    worksDiv.style.opacity = 0.80;
     worksDiv.innerHTML += `<button id='close-btn-works' class='close-btn-works projects'>X</button><p class='projects hidden' id='password-g'>Password generator</p><p class='projects hidden' id='word-w'>Word writer</p`
     const passwordG = document.getElementById('password-g');
     const wordW = document.getElementById('word-w');
@@ -172,6 +174,7 @@ function renderWorks() {
         wordW.classList.remove('hidden');
         wordW.classList.add('visible');
     }, 250)
+    
     // const appearingCloseBtn = setTimeout(()=> {
     //     closeBtnWorks.classList.remove('hidden');
     //     closeBtnWorks.classList.add('visible');
@@ -197,6 +200,7 @@ function unrenderWorks() {
         worksBtn.classList.add('nav-item');
         closeBtnWorks.classList.add('hidden');
         worksDiv.innerHTML = `<p id='works-btn' class='works-btn nav-item'>works</p>`;
+        worksDiv.style.opacity = 1;
     }, 750)
     worksBtnClickedOnce = !worksBtnClickedOnce;
 }
