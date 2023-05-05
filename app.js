@@ -162,9 +162,10 @@ function renderWorks() {
     aboutmeBtn.classList.add('about-me-btn-changed');
     worksDiv.style.background = '#080808';
     worksDiv.style.opacity = 0.80;
-    worksDiv.innerHTML += `<button id='close-btn-works' class='close-btn-works projects'>X</button><p class='projects hidden' id='password-g'>Password generator</p><p class='projects hidden' id='word-w'>Word writer</p`
+    worksDiv.innerHTML += `<button id='close-btn-works' class='close-btn-works projects'>X</button><p class='projects hidden' id='password-g'>Password generator</p><p class='projects hidden' id='word-w'>Weather App</p><p class='projects hidden' id='grumpy-cat'>Grumpy Cat</p>`              /*add new works */
     const passwordG = document.getElementById('password-g');
     const wordW = document.getElementById('word-w');
+    const grumpyCat = document.getElementById('grumpy-cat');
     // const closeBtnWorks = document.getElementById('close-btn-works');
     const appearingPassword = setTimeout(()=> {
         passwordG.classList.remove('hidden');
@@ -173,6 +174,10 @@ function renderWorks() {
     const appearingWord = setTimeout(()=> {
         wordW.classList.remove('hidden');
         wordW.classList.add('visible');
+    }, 250)
+    const appearingCat= setTimeout(()=> {
+        grumpyCat.classList.remove('hidden');
+        grumpyCat.classList.add('visible');
     }, 250)
     
     // const appearingCloseBtn = setTimeout(()=> {
@@ -188,11 +193,14 @@ function unrenderWorks() {
     const worksBtn = document.getElementById('works-btn');
     const passwordG = document.getElementById('password-g');
     const wordW = document.getElementById('word-w');
+    const grumpyCat = document.getElementById('grumpy-cat');
     const closeBtnWorks = document.getElementById('close-btn-works');
     passwordG.classList.remove('visible');
     passwordG.classList.add('hidden');
     wordW.classList.remove('visible');
     wordW.classList.add('hidden');
+    grumpyCat.classList.remove('visible');
+    grumpyCat.classList.add('hidden');
     const dissapearingWorksMenu = setTimeout(()=> {
         worksBtn.textContent = 'works';
         aboutmeBtn.classList.remove('about-me-btn-changed');
@@ -224,12 +232,23 @@ function render2work() {
     const htmlString = ` 
                             
                             <h3 class='works-text works-text-upper intro-cont'>
-                            Discover my online writing app, designed to help you write more efficiently. 
-                            No more cluttered notes, just a clean and organized workspace. 
-                            Write and save with ease, wherever you are.</h3>
-                            <h3 class='works-text intro-cont'>Take your writing to the next level with a simple and user-friendly platform. 
-                            Get started today!</h3>
-                            <a href='https://adomasr.github.io/Project/' target='_blank'><h5 class='password-link intro-cont'><span class='link-span'><</span> Link <span class='link-span'>></span></h5></a> 
+                            Looking for an easy and convenient way to check the weather? Look no further than our weather app! With our app, you can stay up-to-date on the latest weather conditions in your area.</h3>
+                            <h3 class='works-text intro-cont'>Whether you're planning a trip or just need to know what to wear for the day, our weather app has got you covered!</h3>
+                            <a href='https://adomasr.github.io/weatherApp-production/' target='_blank'><h5 class='password-link intro-cont'><span class='link-span'><</span> Link <span class='link-span'>></span></h5></a> 
+                        `;
+    renderContent(htmlString);
+}
+
+
+function render3work() {
+
+    const htmlString = ` 
+                            
+                            <h3 class='works-text works-text-upper intro-cont'>
+                            Introducing the chat app with a grumpy cat! Do you love cats but always wondered what they would say if they could talk? Well, now you can find out with our app!
+                            </h3>
+                            <h3 class='works-text intro-cont'>But be warned - our cat is not your average cuddly kitty. With a snarky attitude and a sharp tongue, this cat is not afraid to speak its mind.</h3>
+                            <a href='https://grumpy-cat-p-x.netlify.app' target='_blank'><h5 class='password-link intro-cont'><span class='link-span'><</span> Link <span class='link-span'>></span></h5></a> 
                         `;
     renderContent(htmlString);
 }
@@ -273,6 +292,10 @@ document.addEventListener('click', (event)=> {
 
     if (event.target.id === 'word-w') {
         render2work();
+    }
+
+    if (event.target.id === 'grumpy-cat') {
+        render3work();
     }
 })
 

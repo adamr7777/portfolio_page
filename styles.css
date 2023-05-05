@@ -70,7 +70,6 @@ nav {
 .main-container {
     display: flex;
     flex-direction: row;
-    /* border: 3px dotted red; */
     margin: 0 180px;
     margin-top: 50px;
     height: 700px;
@@ -270,7 +269,7 @@ a {
     position: absolute;
     border-top: 3px solid #a17917;
     border-bottom: 3px solid #a17917;         
-    width: 400px;
+    width: 550px;
     top: 8px;
     left: 300px;            /*this is where to change position according to the number of works*/
               /*this is where to change size according to the number of works*/
@@ -342,3 +341,6 @@ a {
 .hidden-x {
     display: none;
 }
+
+
+
