@@ -70,7 +70,6 @@ nav {
 .main-container {
     display: flex;
     flex-direction: row;
-    /* border: 3px dotted red; */
     margin: 0 180px;
     margin-top: 50px;
     height: 700px;
@@ -259,26 +258,33 @@ a {
     margin-left: -1em; 
   }
 
-  .works-div {
-   
-  }
+/* .works-div {
+    background: #080808;
+    opacity: 0.80;
+  } */
 
-  .works-clicked {  
+.works-clicked {  
+    position: relative;
     display: flex;
     position: absolute;
     border-top: 3px solid #a17917;
     border-bottom: 3px solid #a17917;         
-    width: 400px;
+    width: 550px;
     top: 8px;
     left: 300px;            /*this is where to change position according to the number of works*/
               /*this is where to change size according to the number of works*/
   }
   
 
-  .projects {
+.projects {
     margin-left: 50px;
     color: silver;
   }
+
+
+/* .works-btn {
+    opacity: 1;
+} */
 
  /* .works-btn-alt:hover {
     font-size: 16px;
@@ -321,3 +327,20 @@ a {
     color: red; 
     text-shadow: 1px 1px 5px red;
   }
+
+  .close-btn-works {
+    position: absolute;
+    top: 4px;
+    right: 0px;
+    border: none;
+    background: none;
+    color: silver;
+
+}
+
+.hidden-x {
+    display: none;
+}
+
+
+
