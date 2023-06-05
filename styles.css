@@ -269,10 +269,10 @@ a {
     position: absolute;
     border-top: 3px solid #a17917;
     border-bottom: 3px solid #a17917;         
-    width: 550px;
+    width: 670px; /*this is where to change size according to the number of works*/
     top: 8px;
     left: 300px;            /*this is where to change position according to the number of works*/
-              /*this is where to change size according to the number of works*/
+              
   }
   
 
