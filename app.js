@@ -1,11 +1,11 @@
-//variables 
+
 
 const emailIcon = document.getElementById('email-icon');
 let worksBtnClickedOnce = false;
 
 
 
-//functions
+
 
 function getFlicker() {
     document.getElementById('web-dev-h2').classList.toggle('web-dev-red')
@@ -13,8 +13,8 @@ function getFlicker() {
 
 
 function setFlickering() {
-        setTimeout(getFlicker, 3000); //tarp 1 ir 2 2000 tarp 2 ir 2 100
-        setTimeout(getFlicker, 3150);//working
+        setTimeout(getFlicker, 3000); 
+        setTimeout(getFlicker, 3150);
         setTimeout(getFlicker, 5150);
         setTimeout(getFlicker, 5300);
         setTimeout(getFlicker, 5600);
@@ -40,10 +40,7 @@ function renderEmailDiv() {
     const emailModale = document.getElementById('email-modale');
     emailIcon.classList.add('hidden-email-icon');
     emailModale.classList.add('visible-email-modale');
-    // emailModale.style.height = '350px';
-    // emailModale.style.width = '350px';
     animateGrowthEmail(emailModale, isReverse);
-    //render content
     const content = document.getElementsByClassName('email-modal-content');
     const delayedContent = setTimeout(()=> {
         for (let element of content) {
@@ -85,7 +82,7 @@ function copyToClipboard() {
         const infoP = document.getElementById('info-p');
         navigator.clipboard.writeText(emailH4.textContent)
             .then(()=> {
-                infoP.textContent = 'Copied!'           //add async 
+                infoP.textContent = 'Copied!'          
                 infoP.style.color = '#a17917';
                 infoP.classList.remove('info-p');
             })
@@ -143,47 +140,42 @@ function renderAboutMe() {
 
 
 function renderWorks() {
-    // let isReverse = false;
-    // if (isReverse === false) {
-
-    //     isReverse = !isReverse;
-    // } 
     const worksDiv = document.getElementById('works-div');
     const aboutmeBtn = document.getElementById('about-me-btn');
     const worksBtn = document.getElementById('works-btn');
-    // worksBtn
     worksBtn.textContent += ':';
     worksBtn.classList.remove('nav-item');
-    // worksBtn.classList.add('works-btn-alt');
-    // console.log(worksBtn.classList);
-    // worksBtn.innerHTML += '<span id="span">:</span>';
-    // document.getElementById('span').style.color = 'red';
     worksDiv.classList.add('works-clicked');
     aboutmeBtn.classList.add('about-me-btn-changed');
     worksDiv.style.background = '#080808';
     worksDiv.style.opacity = 0.80;
-    worksDiv.innerHTML += `<button id='close-btn-works' class='close-btn-works projects'>X</button><p class='projects hidden' id='password-g'>Password generator</p><p class='projects hidden' id='word-w'>Weather App</p><p class='projects hidden' id='grumpy-cat'>Grumpy Cat</p>`              /*add new works */
-    const passwordG = document.getElementById('password-g');
-    const wordW = document.getElementById('word-w');
+    worksDiv.innerHTML += `
+        <button id='close-btn-works' class='close-btn-works projects'>X</button>
+        <p class='projects hidden' id='meme-manager'>Meme Manager</p>
+        <p class='projects hidden' id='weather-app'>Weather App</p>
+        <p class='projects hidden' id='grumpy-cat'>Grumpy Cat</p>
+        <p class='projects hidden' id='portfolio'>My Portfolio</p>
+    `              /*add new works */
+    const passwordG = document.getElementById('meme-manager');
+    const weatherApp = document.getElementById('weather-app');
     const grumpyCat = document.getElementById('grumpy-cat');
-    // const closeBtnWorks = document.getElementById('close-btn-works');
-    const appearingPassword = setTimeout(()=> {
+    const portfolio = document.getElementById('portfolio');
+    const appearingMemeManager = setTimeout(()=> {
         passwordG.classList.remove('hidden');
         passwordG.classList.add('visible');
     }, 250)
-    const appearingWord = setTimeout(()=> {
-        wordW.classList.remove('hidden');
-        wordW.classList.add('visible');
+    const appearingWeatherApp = setTimeout(()=> {
+        weatherApp.classList.remove('hidden');
+        weatherApp.classList.add('visible');
     }, 250)
     const appearingCat= setTimeout(()=> {
         grumpyCat.classList.remove('hidden');
         grumpyCat.classList.add('visible');
     }, 250)
-    
-    // const appearingCloseBtn = setTimeout(()=> {
-    //     closeBtnWorks.classList.remove('hidden');
-    //     closeBtnWorks.classList.add('visible');
-    // }, 250)
+    const appearingPortfolio= setTimeout(()=> {
+        portfolio.classList.remove('hidden');
+        portfolio.classList.add('visible');
+    }, 250)
 }
 
 
@@ -191,16 +183,19 @@ function unrenderWorks() {
     const worksDiv = document.getElementById('works-div');
     const aboutmeBtn = document.getElementById('about-me-btn');
     const worksBtn = document.getElementById('works-btn');
-    const passwordG = document.getElementById('password-g');
-    const wordW = document.getElementById('word-w');
+    const passwordG = document.getElementById('meme-manager');
+    const weatherApp = document.getElementById('weather-app');
     const grumpyCat = document.getElementById('grumpy-cat');
+    const portfolio = document.getElementById('portfolio');
     const closeBtnWorks = document.getElementById('close-btn-works');
     passwordG.classList.remove('visible');
     passwordG.classList.add('hidden');
-    wordW.classList.remove('visible');
-    wordW.classList.add('hidden');
+    weatherApp.classList.remove('visible');
+    weatherApp.classList.add('hidden');
     grumpyCat.classList.remove('visible');
     grumpyCat.classList.add('hidden');
+    portfolio.classList.remove('visible');
+    portfolio.classList.add('hidden');
     const dissapearingWorksMenu = setTimeout(()=> {
         worksBtn.textContent = 'works';
         aboutmeBtn.classList.remove('about-me-btn-changed');
@@ -216,12 +211,10 @@ function unrenderWorks() {
 function render1work() {
     
     const htmlString = ` 
-                            <h3 class='works-text works-text-upper intro-cont'>Introducing my secure password generator app! 
-                            Say goodbye to weak and easily hacked passwords. With just a click, generate strong and unique passwords 
-                            for all of your online accounts.</h3>
-                            <h3 class='works-text intro-cont'>Experience the ease and peace of mind that comes with a secure password. 
-                            Try it out today!</h3>
-                            <a href='https://adomasr.github.io/password_app/' target='_blank'><h5 class='password-link intro-cont'><span class='link-span'><</span> Link <span class='link-span'>></span></h5></a> 
+                            <h3 class='works-text works-text-upper intro-cont'>Take control of your meme empire with our efficient meme manager. Organize, like, comment, upload, and make your own viral content effortlessly.</h3>
+                            <h3 class='works-text intro-cont'>Unleash a wave of laughter and engagement with curated memes across platforms. Stay ahead of the meme game with our indispensable manager!</h3>
+                            <a href='https://meme-manager.netlify.app' target='_blank'><h5 class='password-link intro-cont'><span class='link-span'><</span> Link <span class='link-span'>></span></h5></a> 
+                            <a href='https://github.com/adomasr/memesManager' target='_blank'><h5 class='password-link intro-cont'><span class='link-span'><</span> Code <span class='link-span'>></span></h5></a> 
                         `;
     renderContent(htmlString);
 }
@@ -235,6 +228,7 @@ function render2work() {
                             Looking for an easy and convenient way to check the weather? Look no further than our weather app! With our app, you can stay up-to-date on the latest weather conditions in your area.</h3>
                             <h3 class='works-text intro-cont'>Whether you're planning a trip or just need to know what to wear for the day, our weather app has got you covered!</h3>
                             <a href='https://adomasr.github.io/weatherApp-production/' target='_blank'><h5 class='password-link intro-cont'><span class='link-span'><</span> Link <span class='link-span'>></span></h5></a> 
+                            <a href='https://github.com/adomasr/weatherApp-production' target='_blank'><h5 class='password-link intro-cont'><span class='link-span'><</span> Code <span class='link-span'>></span></h5></a> 
                         `;
     renderContent(htmlString);
 }
@@ -248,13 +242,25 @@ function render3work() {
                             Introducing the chat app with a grumpy cat! Do you love cats but always wondered what they would say if they could talk? Well, now you can find out with our app!
                             </h3>
                             <h3 class='works-text intro-cont'>But be warned - our cat is not your average cuddly kitty. With a snarky attitude and a sharp tongue, this cat is not afraid to speak its mind.</h3>
-                            <a href='https://grumpy-cat-p-x.netlify.app' target='_blank'><h5 class='password-link intro-cont'><span class='link-span'><</span> Link <span class='link-span'>></span></h5></a> 
+                            <a href='https://grumpy-cat-cat.netlify.app' target='_blank'><h5 class='password-link intro-cont'><span class='link-span'><</span> Link <span class='link-span'>></span></h5></a> 
+                            <a href='https://github.com/adomasr/project-x' target='_blank'><h5 class='password-link intro-cont'><span class='link-span'><</span> Code <span class='link-span'>></span></h5></a> 
                         `;
     renderContent(htmlString);
 }
 
+function render4work() {
 
-//event listeners
+    const htmlString = ` 
+                            
+                            <h3 class='works-text works-text-upper intro-cont'>Welcome to my web development portfolio page. Discover a collection of my meticulously crafted websites and projects, showcasing my skills in front-end development. 
+                            </h3>
+                            <h3 class='works-text intro-cont'>Join me on a journey through clean designs and seamless user experiences. Let's bring your digital vision to life together!</h3>
+                            <a href='https://adomasr.github.io/portfolio_page/' target='_blank'><h5 class='password-link intro-cont'><span class='link-span'><</span> Link <span class='link-span'>></span></h5></a> 
+                            <a href='https://github.com/adomasr/portfolio_page' target='_blank'><h5 class='password-link intro-cont'><span class='link-span'><</span> Code <span class='link-span'>></span></h5></a> 
+                        `;
+    renderContent(htmlString);
+}
+
 
 
 document.addEventListener('click', (event)=> {
@@ -286,21 +292,24 @@ document.addEventListener('click', (event)=> {
         unrenderWorks();
     }
 
-    if (event.target.id === 'password-g') {
+    if (event.target.id === 'meme-manager') {
         render1work();
     }
 
-    if (event.target.id === 'word-w') {
+    if (event.target.id === 'weather-app') {
         render2work();
     }
 
     if (event.target.id === 'grumpy-cat') {
         render3work();
     }
+
+    if (event.target.id === 'portfolio') {
+        render4work();
+    }
 })
 
 
-//init
 
    setFlickering();
    revealContent();
