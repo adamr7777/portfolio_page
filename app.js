@@ -3,13 +3,9 @@
 const emailIcon = document.getElementById('email-icon');
 let worksBtnClickedOnce = false;
 
-
-
-
-
 function getFlicker() {
     document.getElementById('web-dev-h2').classList.toggle('web-dev-red')
-}
+};
 
 
 function setFlickering() {
@@ -20,7 +16,7 @@ function setFlickering() {
         setTimeout(getFlicker, 5600);
         setTimeout(getFlicker, 5750);
         setTimeout(setFlickering, 5751);
-    }
+    };
 
 function revealContent() {
     setTimeout(()=> {
@@ -32,31 +28,31 @@ function revealContent() {
        introduction.classList.add('visible');
        emailIcon.classList.remove('hidden');
        emailIcon.classList.add('fa-envelope');
-    },1000)
-}
+    },1000);
+};
     
 function renderEmailDiv() {
     const isReverse = false;
-    const emailModale = document.getElementById('email-modale');
+    const emailModal = document.getElementById('email-modal');
     emailIcon.classList.add('hidden-email-icon');
-    emailModale.classList.add('visible-email-modale');
-    animateGrowthEmail(emailModale, isReverse);
+    emailModal.classList.add('visible-email-modal');
+    animateGrowthEmail(emailModal, isReverse);
     const content = document.getElementsByClassName('email-modal-content');
     const delayedContent = setTimeout(()=> {
         for (let element of content) {
             element.classList.remove('hidden');
             element.classList.add('visible');
         }
-    }, 650)
-}
+    }, 650);
+};
 
 
-function animateGrowthEmail(emailModale, isReverse) {
+function animateGrowthEmail(emailModal, isReverse) {
     if (isReverse === false) {
         let size = 10;
         const theInterval = setInterval(()=> {
-            emailModale.style.height = size + 'px';
-            emailModale.style.width = size + 'px';
+            emailModal.style.height = size + 'px';
+            emailModal.style.width = size + 'px';
             size += 50;
             if (size >= 350) {
                 clearInterval(theInterval);
@@ -66,15 +62,15 @@ function animateGrowthEmail(emailModale, isReverse) {
     else if (isReverse === true) {
         let size = 310;
         const theInterval = setInterval(()=> {
-            emailModale.style.height = size + 'px';
-            emailModale.style.width = size + 'px';
+            emailModal.style.height = size + 'px';
+            emailModal.style.width = size + 'px';
             size -= 50;
             if (size <= 0) {
                 clearInterval(theInterval);
             }
         }, 100)
     }
-}
+};
 
 
 function copyToClipboard() {
@@ -89,15 +85,15 @@ function copyToClipboard() {
             .catch(err=> {
                 alert(`Failed to copy the text: ${err} Please try again`)
             })
-}
+};
 
 
 function unrenderEmailDiv() {
     const isReverse = true;
-    const emailModale = document.getElementById('email-modale');
+    const emailModal = document.getElementById('email-modal');
     const content = document.getElementsByClassName('email-modal-content');
     const delayedContent = setTimeout(()=> {
-        animateGrowthEmail(emailModale, true);
+        animateGrowthEmail(emailModal, true);
     }, 500)
     for (let element of content) {
         element.classList.remove('visible');
@@ -105,9 +101,9 @@ function unrenderEmailDiv() {
     }
     const displayEmailIcon = setTimeout (()=> {
         emailIcon.classList.remove('hidden-email-icon'); 
-        emailModale.classList.remove('visible-email-modale'); 
+        emailModal.classList.remove('visible-email-modal'); 
     }, 1230)
-}
+};
 
 
 function renderContent(htmlString) {
@@ -119,24 +115,22 @@ function renderContent(htmlString) {
     const displayCont = setTimeout(()=> {
         introDiv.innerHTML = htmlString;
     }, 700)
-}
+};
 
 
 function renderAboutMe() {
     const htmlString = ` 
-                            <h3 class='first-item-aboutme intro-cont'>I am a web developer that specialises in frontend.</h3> 
-                            <h3 class='second-item-aboutme intro-cont'>My current stack:</h3>
-                            <ul class='about-me-stack intro-cont'>
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>Vanilla Java Script</li>
-                                <li>Git Version Control</li>
-                            </ul>
+                        <h3 class='first-item-aboutme intro-cont'>I am a web developer that specialises in frontend.</h3> 
+                        <h3 class='second-item-aboutme intro-cont'>My current stack:</h3>
+                        <ul class='about-me-stack intro-cont'>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Vanilla Java Script</li>
+                            <li>Git Version Control</li>
+                        </ul>
                         `;
-    renderContent(htmlString);
-  
-    
-}
+    renderContent(htmlString);  
+};
 
 
 function renderWorks() {
@@ -155,7 +149,7 @@ function renderWorks() {
         <p class='projects hidden' id='weather-app'>Weather App</p>
         <p class='projects hidden' id='grumpy-cat'>Grumpy Cat</p>
         <p class='projects hidden' id='portfolio'>My Portfolio</p>
-    `              /*add new works */
+    `              /*add new projects */
     const passwordG = document.getElementById('meme-manager');
     const weatherApp = document.getElementById('weather-app');
     const grumpyCat = document.getElementById('grumpy-cat');
@@ -176,7 +170,7 @@ function renderWorks() {
         portfolio.classList.remove('hidden');
         portfolio.classList.add('visible');
     }, 250)
-}
+};
 
 
 function unrenderWorks() {
@@ -206,7 +200,7 @@ function unrenderWorks() {
         worksDiv.style.opacity = 1;
     }, 750)
     worksBtnClickedOnce = !worksBtnClickedOnce;
-}
+};
 
 function render1work() {
     
@@ -217,7 +211,7 @@ function render1work() {
                             <a href='https://github.com/adomasr/memesManager' target='_blank'><h5 class='password-link intro-cont'><span class='link-span'><</span> Code <span class='link-span'>></span></h5></a> 
                         `;
     renderContent(htmlString);
-}
+};
 
 
 function render2work() {
@@ -227,7 +221,7 @@ function render2work() {
                             <h3 class='works-text works-text-upper intro-cont'>
                             Looking for an easy and convenient way to check the weather? Look no further than our weather app! With our app, you can stay up-to-date on the latest weather conditions in your area.</h3>
                             <h3 class='works-text intro-cont'>Whether you're planning a trip or just need to know what to wear for the day, our weather app has got you covered!</h3>
-                            <a href='https://adomasr.github.io/weatherApp-production/' target='_blank'><h5 class='password-link intro-cont'><span class='link-span'><</span> Link <span class='link-span'>></span></h5></a> 
+                            <a href='https://weather-app-hot-not.netlify.app' target='_blank'><h5 class='password-link intro-cont'><span class='link-span'><</span> Link <span class='link-span'>></span></h5></a> 
                             <a href='https://github.com/adomasr/weatherApp-production' target='_blank'><h5 class='password-link intro-cont'><span class='link-span'><</span> Code <span class='link-span'>></span></h5></a> 
                         `;
     renderContent(htmlString);
@@ -255,7 +249,7 @@ function render4work() {
                             <h3 class='works-text works-text-upper intro-cont'>Welcome to my web development portfolio page. Discover a collection of my meticulously crafted websites and projects, showcasing my skills in front-end development. 
                             </h3>
                             <h3 class='works-text intro-cont'>Join me on a journey through clean designs and seamless user experiences. Let's bring your digital vision to life together!</h3>
-                            <a href='https://adomasr.github.io/portfolio_page/' target='_blank'><h5 class='password-link intro-cont'><span class='link-span'><</span> Link <span class='link-span'>></span></h5></a> 
+                            <a href='https://my-portfolio-webdev.netlify.app' target='_blank'><h5 class='password-link intro-cont'><span class='link-span'><</span> Link <span class='link-span'>></span></h5></a> 
                             <a href='https://github.com/adomasr/portfolio_page' target='_blank'><h5 class='password-link intro-cont'><span class='link-span'><</span> Code <span class='link-span'>></span></h5></a> 
                         `;
     renderContent(htmlString);
@@ -307,7 +301,7 @@ document.addEventListener('click', (event)=> {
     if (event.target.id === 'portfolio') {
         render4work();
     }
-})
+});
 
 
 

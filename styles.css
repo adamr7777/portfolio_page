@@ -20,7 +20,7 @@ nav {
     display: flex;                     
     align-items: center;
     justify-content: space-between;
-    /* border: 3px dotted white; */
+    
     width: 500px;
     margin-right: 100px;
     color: #a17917;
@@ -28,9 +28,8 @@ nav {
 
 
 
-/* .nav-options i:hover,  */
+
 .nav-item:hover,
-/* .nav-options i:focus,  */
 .nav-item:focus,
 .logo:hover,
 .logo:focus {
@@ -38,16 +37,7 @@ nav {
     text-shadow: 1px 1px 5px red;
     font-size: 20px;
     cursor: pointer;
-    /* text-decoration: underline; */
 }
-
-/* .works-btn:hover,
-.works-btn:focus {
-    color: red;
-    text-shadow: 1px 1px 5px red;
-    font-size: 20px;
-    cursor: pointer;
-} */
 
 
 .about-me-btn-changed {
@@ -60,7 +50,7 @@ nav {
     flex-direction: row;
     align-items: center;
     margin-left: 50px;
-    color: #a17917; /*flickers to red, perhaps?*/
+    color: #a17917; 
 }
 
 .logo i {
@@ -89,15 +79,8 @@ nav {
 }
 
 
-.orn {
-    /* border-right: 3px solid #a17917; */
-    /* border-top: 3px solid #a17917; */
-}
-
 .orn img {
     width: 750px;
-    
-
 }
 
 .welcome {
@@ -144,19 +127,16 @@ a {
     font-size: 60px;
     cursor: pointer;
     text-shadow: 1px 1px 5px red;
-    /* text-decoration: underline; */
 }
 
 
-.email-modale {                 
+.email-modal {                 
     position: fixed;
     background: #080808;
     opacity: 0.80;
     border: 3px solid #a17917;
     width: 0px;
     height: 0px;
-    /* width: 350px;
-    height: 350px; */
     bottom: 47px;
     right: 40px;
     flex-direction: column;
@@ -164,12 +144,12 @@ a {
 }
 
 
-.email-modale h2 {
+.email-modal h2 {
     margin-top: 50px;
 } 
 
 
-.email-modale p {
+.email-modal p {
     margin-top: 80px;
 } 
 
@@ -189,11 +169,11 @@ a {
     display: none;
 }
 
-.hidden-email-modale {
+.hidden-email-modal {
     display: none;
 }
 
-.visible-email-modale {
+.visible-email-modal {
     display: flex;
 }
 
@@ -221,10 +201,6 @@ a {
 
 }
 
-/* .about-me-section {
-    display: none;
-}  */
-
 
 .first-item-aboutme {
     margin-top: 100px;
@@ -237,11 +213,6 @@ a {
     font-weight: 300;
 }
 
-
-/* 
-.about-me-content {
-    margin-bottom:
-} */
 
 .about-me-stack li {
     margin-top: 50px;       /*this is where to work with stack li*/
@@ -258,10 +229,6 @@ a {
     margin-left: -1em; 
   }
 
-/* .works-div {
-    background: #080808;
-    opacity: 0.80;
-  } */
 
 .works-clicked {  
     position: relative;
@@ -269,10 +236,10 @@ a {
     position: absolute;
     border-top: 3px solid #a17917;
     border-bottom: 3px solid #a17917;         
-    width: 550px;
+    width: 670px; /*this is where to change size according to the number of works*/
     top: 8px;
     left: 300px;            /*this is where to change position according to the number of works*/
-              /*this is where to change size according to the number of works*/
+              
   }
   
 
@@ -280,24 +247,6 @@ a {
     margin-left: 50px;
     color: silver;
   }
-
-
-/* .works-btn {
-    opacity: 1;
-} */
-
- /* .works-btn-alt:hover {
-    font-size: 16px;
- } */
-
-  /* .projects:hover,
-  .projects:focus {
-      color: red;
-      cursor: pointer;
-      text-shadow: 1px 1px 5px red;
-  } */
-  
-
 
 
   .works-text-upper {
