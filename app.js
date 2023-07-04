@@ -36,7 +36,7 @@ function render1work() {
                                 </h5>
                             </a> 
                            
-                            <a href='https://github.com/adomasr/memesManager' target='_blank'>
+                            <a href='https://github.com/adamr7777/memesManager' target='_blank'>
                                 <h5 class='password-link intro-cont'>
                                     <span class='link-span'><</span> Code <span class='link-span'>></span>
                                 </h5>
@@ -67,7 +67,7 @@ function render2work() {
                                 </h5>
                             </a> 
                            
-                            <a href='https://github.com/adomasr/weatherApp-production' target='_blank'>
+                            <a href='https://github.com/adamr7777/weatherApp-production' target='_blank'>
                                 <h5 class='password-link intro-cont'>
                                     <span class='link-span'><</span> Code <span class='link-span'>></span>
                                 </h5>
@@ -98,7 +98,7 @@ function render3work() {
                                 </h5>
                             </a> 
                             
-                            <a href='https://github.com/adomasr/project-x' target='_blank'>
+                            <a href='https://github.com/adamr7777/project-x' target='_blank'>
                                 <h5 class='password-link intro-cont'>
                                     <span class='link-span'><</span> Code <span class='link-span'>></span>
                                 </h5>
@@ -128,7 +128,7 @@ function render4work() {
                                 </h5>
                             </a> 
                            
-                            <a href='https://github.com/adomasr/portfolio_page' target='_blank'>
+                            <a href='https://github.com/adamr7777/portfolio_page' target='_blank'>
                                 <h5 class='password-link intro-cont'>
                                     <span class='link-span'><</span> Code <span class='link-span'>></span>
                                 </h5>
