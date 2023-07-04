@@ -134,7 +134,6 @@ export function renderAboutMe() {
                             <li>HTML</li>
                             <li>CSS</li>
                             <li>Vanilla Java Script</li>
-                            <li>React</li>
                             <li>Git Version Control</li>
                         </ul>
                         `;

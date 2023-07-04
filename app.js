@@ -2,6 +2,7 @@
 import {setFlickering, revealContent, renderEmailDiv, copyToClipboard, 
     unrenderEmailDiv, renderContent, renderAboutMe} from './utils';
 
+    
 
 
 const worksBtnClickedModule = (function() { /*used in the event listener 'works-btn' and unrenderWorks */
@@ -17,15 +18,17 @@ const worksBtnClickedModule = (function() { /*used in the event listener 'works-
 function render1work() {
     
     const htmlString = ` 
-                            <h3 class='works-text works-text-upper intro-cont'>
-                                Take control of your meme empire with our efficient meme manager. 
-                                Organize, like, comment, upload, and make your own viral content effortlessly.
-                            </h3>
+                            <h4 class='works-text works-text-upper intro-cont'>
+                                Meme manager app (CRUD) which lets you: 
+                            </h4>
                             
-                            <h3 class='works-text intro-cont'>
-                                Unleash a wave of laughter and engagement with curated memes across platforms. 
-                                Stay ahead of the meme game with our indispensable manager!
-                            </h3>
+                            <h4 class='works-text intro-cont'>
+                                ♦️ get meme templates from the dedicated API displayed on the main feed<br/>
+                                ♦️ interact with them in a bunch of different ways (like, favourite, add comments)<br/>
+                                ♦️ upload images from your computer as meme templates<br/>
+                                ♦️ create memes using custom text position and other options (using the templates)<br/>
+                                ♦️ view memes and meme templates in the dedicated sections 
+                            </h4>
                            
                             <a href='https://meme-manager.netlify.app' target='_blank'>
                                 <h5 class='password-link intro-cont'>
@@ -109,14 +112,14 @@ function render4work() {
     const htmlString = ` 
                             
                             <h3 class='works-text works-text-upper intro-cont'>
-                                Welcome to my web development portfolio page. 
-                                Discover a collection of my meticulously crafted websites and projects, 
-                                showcasing my skills in front-end development. 
+                                Portfolio of my frontend web development projects. 
                             </h3>
                             
                             <h3 class='works-text intro-cont'>
-                                Join me on a journey through clean designs and seamless user experiences. 
-                                Let's bring your digital vision to life together!
+                                ♦️ built as a SPA where the various sections displaying the info 
+                                    (projects, technologies and about me) are rendered on 
+                                    the screen conditionally<br/>
+                                ♦️ custom hand-made CSS - JS animations.
                             </h3>
                             
                             <a href='https://my-portfolio-webdev.netlify.app' target='_blank'>
