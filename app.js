@@ -50,16 +50,18 @@ function render2work() {
 
     const htmlString = ` 
                             
-                            <h3 class='works-text works-text-upper intro-cont'>
-                                Looking for an easy and convenient way to check the weather? 
-                                Look no further than our weather app! With our app, you can stay up-to-date 
-                                on the latest weather conditions in your area.
-                            </h3>
+                            <h4 class='works-text works-text-upper intro-cont'>
+                                Weather App:
+                            </h4>
                            
-                            <h3 class='works-text intro-cont'>
-                                Whether you're planning a trip or just need to know what to wear for the day, 
-                                our weather app has got you covered!
-                            </h3>
+                            <h4 class='works-text intro-cont'>
+                                ♦️ calls a weather API for the 3-hour period/5-days predictions<br/>
+                                ♦️ utilises geolocation API to pinpoint the user's location to get<br/>
+                                    accurate results for the area
+                                ♦️ calls Unsplash API to receive an image tailored to the weather conditions<br/> 
+                                    by using specific query parameters (if it's snowy it displays e.g. snowy mountains)<br/>
+                                ♦️ displays a random 'fortune cookie' with a tip for the day from the inbuilt DB<br/> 
+                            </h4>
                            
                             <a href='https://weather-app-hot-not.netlify.app' target='_blank'>
                                 <h5 class='password-link intro-cont'>
@@ -81,16 +83,16 @@ function render3work() {
 
     const htmlString = ` 
                             
-                            <h3 class='works-text works-text-upper intro-cont'>
-                                Introducing the chat app with a grumpy cat! 
-                                Do you love cats but always wondered what they would say if they could talk? 
-                                Well, now you can find out with our app!
-                            </h3>
+                            <h4 class='works-text works-text-upper intro-cont'>
+                                AI cat chatbot:
+                            </h4>
                             
-                            <h3 class='works-text intro-cont'>
-                                But be warned - our cat is not your average cuddly kitty. 
-                                With a snarky attitude and a sharp tongue, this cat is not afraid to speak its mind.
-                            </h3>
+                            <h4 class='works-text intro-cont'>
+                                ♦️ the user can hold a back-and-forth realistic conversation with the chatbot<br/>
+                                ♦️ utilises GPT-4 technology via POST API call<br/>
+                                ♦️ uses custom prompts that shape the AI to impersonate a grumpy and cheeky cat character<br/>
+                                ♦️ React app architecture maintains a smooth and responsive user experience<br/>
+                            </h4>
                            
                             <a href='https://grumpy-cat-cat.netlify.app' target='_blank'>
                                 <h5 class='password-link intro-cont'>
@@ -112,7 +114,7 @@ function render4work() {
     const htmlString = ` 
                             
                             <h3 class='works-text works-text-upper intro-cont'>
-                                Portfolio of my frontend web development projects. 
+                                Portfolio of my frontend web development projects: 
                             </h3>
                             
                             <h3 class='works-text intro-cont'>
