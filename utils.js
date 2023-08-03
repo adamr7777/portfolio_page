@@ -128,12 +128,14 @@ export function renderContent(htmlString) {
 
 export function renderAboutMe() {
     const htmlString = ` 
-                        <h3 class='first-item-aboutme intro-cont'>I am a web developer that specialises in frontend.</h3> 
+                        <h3 class='first-item-aboutme intro-cont'>I am a web developer that specialises in frontend, 
+                            and works with backend.</h3> 
                         <h3 class='second-item-aboutme intro-cont'>My current stack:</h3>
                         <ul class='about-me-stack intro-cont'>
                             <li>HTML</li>
-                            <li>CSS</li>
-                            <li>Vanilla Java Script</li>
+                            <li>CSS | Bootstrap</li>
+                            <li>Vanilla Java Script | React</li>
+                            <li>Node | Express | MangoDb</li>
                             <li>Git Version Control</li>
                         </ul>
                         `;

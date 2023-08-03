@@ -19,7 +19,8 @@ function render1work() {
     
     const htmlString = ` 
                             <h4 class='works-text works-text-upper intro-cont'>
-                                Meme manager app (CRUD) which lets you: 
+                                <h5>React | Bootstrap | CSS | Node | Express</h5>
+                                Meme manager app (CRUD Full-Stack App): 
                             </h4>
                             
                             <h4 class='works-text intro-cont'>
@@ -30,13 +31,13 @@ function render1work() {
                                 ♦️ view memes and meme templates in the dedicated sections 
                             </h4>
                            
-                            <a href='https://meme-manager.netlify.app' target='_blank'>
+                            <a href='https://memes-manager.onrender.com/' target='_blank'>
                                 <h5 class='password-link intro-cont'>
                                     <span class='link-span'><</span> Link <span class='link-span'>></span>
                                 </h5>
                             </a> 
                            
-                            <a href='https://github.com/adamr7777/memesManager' target='_blank'>
+                            <a href='https://github.com/adamr7777/memesManager_frontend' target='_blank'>
                                 <h5 class='password-link intro-cont'>
                                     <span class='link-span'><</span> Code <span class='link-span'>></span>
                                 </h5>
@@ -51,9 +52,10 @@ function render2work() {
     const htmlString = ` 
                             
                             <h4 class='works-text works-text-upper intro-cont'>
-                                Weather App:
+                                <h5>React | Bootstrap | CSS | Node | Express</h5>
+                                Weather App (Full-Stack App):
                             </h4>
-                           
+
                             <h4 class='works-text intro-cont'>
                                 ♦️ calls a weather API for the 3-hour period/5-days predictions<br/>
                                 ♦️ utilises geolocation API to pinpoint the user's location to get<br/>
@@ -62,14 +64,14 @@ function render2work() {
                                     by using specific query parameters (if it's snowy it displays e.g. snowy mountains)<br/>
                                 ♦️ displays a random 'fortune cookie' with a tip for the day from the inbuilt DB<br/> 
                             </h4>
-                           
+
                             <a href='https://weather-app-hot-not.netlify.app' target='_blank'>
                                 <h5 class='password-link intro-cont'>
                                     <span class='link-span'><</span> Link <span class='link-span'>></span>
                                 </h5>
                             </a> 
-                           
-                            <a href='https://github.com/adamr7777/weatherApp-production' target='_blank'>
+
+                            <a href='https://github.com/adamr7777/weatherApp_frontend' target='_blank'>
                                 <h5 class='password-link intro-cont'>
                                     <span class='link-span'><</span> Code <span class='link-span'>></span>
                                 </h5>
@@ -84,23 +86,24 @@ function render3work() {
     const htmlString = ` 
                             
                             <h4 class='works-text works-text-upper intro-cont'>
-                                AI cat chatbot:
+                                <h5>React | Bootstrap | CSS | Node | Express</h5>
+                                AI cat chatbot (Full-Stack App):
                             </h4>
-                            
+
                             <h4 class='works-text intro-cont'>
                                 ♦️ the user can hold a back-and-forth realistic conversation with the chatbot<br/>
                                 ♦️ utilises GPT-4 technology via POST API call<br/>
                                 ♦️ uses custom prompts that shape the AI to impersonate a grumpy and cheeky cat character<br/>
                                 ♦️ React app architecture maintains a smooth and responsive user experience<br/>
                             </h4>
-                           
+
                             <a href='https://grumpy-cat-cat.netlify.app' target='_blank'>
                                 <h5 class='password-link intro-cont'>
                                     <span class='link-span'><</span> Link <span class='link-span'>></span>
                                 </h5>
                             </a> 
-                            
-                            <a href='https://github.com/adamr7777/project-x' target='_blank'>
+
+                            <a href='https://github.com/adamr7777/grumpy_cat_frontend' target='_blank'>
                                 <h5 class='password-link intro-cont'>
                                     <span class='link-span'><</span> Code <span class='link-span'>></span>
                                 </h5>
