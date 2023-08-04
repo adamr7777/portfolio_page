@@ -135,7 +135,7 @@ export function renderAboutMe() {
                             <li>HTML</li>
                             <li>CSS | Bootstrap</li>
                             <li>Vanilla Java Script | React</li>
-                            <li>Node | Express | MangoDb</li>
+                            <li>Node | Express | MongoDb</li>
                             <li>Git Version Control</li>
                         </ul>
                         `;
